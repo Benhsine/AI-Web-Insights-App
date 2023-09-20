@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AIWebInsights"
+        tools:targetApi="31">
+        <activity
+            android:name=".WebView1"
+            android:label="chatgpt Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WebView2"
+            android:label="midjourney Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WebView3"
+            android:label="bing Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WebView4"
+            android:label="bing Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WebView5"
+            android:label="bing Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WebView6"
+            android:label="bing Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WebView7"
+            android:label="bing Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WebView8"
+            android:label="bing Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WelcomeActivity1"
+            android:label="AI Web Insights"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WelcomeToChatgptActivity2"
+            android:label="Welcome Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WelcomeToMidjourneyActivity3"
+            android:label="Welcome Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WelcomeToBingActivity4"
+            android:label="Welcome Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WelcomeToBardActivity5"
+            android:label="Welcome Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WelcomeToMicroDesignerActivity6"
+            android:label="Welcome Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WelcomeToIdeogramActivity7"
+            android:label="Welcome Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WelcomeToClaudeAiActivity8"
+            android:label="Welcome Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WelcomeToWhisperActivity9"
+            android:label="Welcome Activity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="main Activity"
+            android:exported="true">
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+    </application>
+
+</manifest>
