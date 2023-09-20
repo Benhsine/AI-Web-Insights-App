@@ -241,16 +241,16 @@
                 android:id="@+id/button8"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/chatgpt"
+                android:src="@drawable/stability_ai"
                 android:background="@drawable/rounded_button_bg"
                 android:scaleType="fitCenter"
                 android:contentDescription="Image Button"
-                android:padding="12dp"  />
+                android:padding="6dp"  />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="chatgpt"
+                android:text="stability ai"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif-black" />
@@ -284,6 +284,7 @@
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
+
 
 
 

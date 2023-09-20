@@ -20,7 +20,7 @@ public class WebView8 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview8);
         webView8  = (WebView) findViewById(R.id.webview8);
-        webView8.loadUrl("https://www.bing.com/create");
+        webView8.loadUrl("https://clipdrop.co/stable-diffusion");
         webView8.setWebViewClient(new WebViewClient());
         WebSettings webSettings = webView8.getSettings();
         webSettings.setUseWideViewPort(true);

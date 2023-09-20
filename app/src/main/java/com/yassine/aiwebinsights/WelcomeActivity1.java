@@ -42,7 +42,7 @@ public class WelcomeActivity1 extends AppCompatActivity {
         mAdView.loadAd(adRequest);
 
         // AdMob interstitial ad
-        InterstitialAd.load(this, "ca-app-pub-3940256099942544/1033173712", adRequest,
+        InterstitialAd.load(this, getString(R.string.interadmob), adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -67,6 +67,7 @@ public class WelcomeActivity1 extends AppCompatActivity {
                         mInterstitialAd = null;
                     }
                 });
+
 
         Button startButton = findViewById(R.id.startButton1);
         startButton.setOnClickListener(new View.OnClickListener() {

@@ -23,7 +23,7 @@
         android:layout_below="@id/welcomeImage3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:text="Welcome to AI Web Insights"
+        android:text="Welcome to stability ai"
         android:textSize="20sp"
         android:textColor="@color/white"/>
 
@@ -34,24 +34,23 @@
         android:layout_below="@id/title3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:text="Click the 'Get Started' button below to embark on your AI adventure. Let's explore the limitless possibilities of AI together."
+        android:text="Stable Diffusion is a diffusion model that can generate realistic images from text descriptions. It is significantly faster than other diffusion models, and it can generate high-quality images with fewer training steps. Click the 'Get Started' button below to embark on your AI adventure. Let's explore the limitless possibilities of AI together."
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="14sp" />
 
 
     <Button
-        android:id="@+id/startwhisper"
+        android:id="@+id/startstabilityai"
+        style="@style/DarkRoundedButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/welcometext3"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="90dp"
-        android:text="Get Started"
-        style="@style/DarkRoundedButtonStyle"
+        android:layout_marginBottom="20dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:textSize="16sp"
-        />
+        android:text="Get Started"
+        android:textSize="16sp" />
 
 </RelativeLayout>

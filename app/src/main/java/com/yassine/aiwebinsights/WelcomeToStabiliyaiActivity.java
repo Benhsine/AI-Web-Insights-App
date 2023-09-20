@@ -7,18 +7,18 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class WelcomeToWhisperActivity9 extends AppCompatActivity {
+public class WelcomeToStabiliyaiActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome_whisper9);
-        Button startButton = findViewById(R.id.startwhisper);
+        setContentView(R.layout.activity_welcome_stability_ai9);
+        Button startButton = findViewById(R.id.startstabilityai);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Launch the MainActivity
-                Intent intent = new Intent(WelcomeToWhisperActivity9.this, WebView8.class);
+                Intent intent = new Intent(WelcomeToStabiliyaiActivity.this, WebView8.class);
                 startActivity(intent);
             }
         });

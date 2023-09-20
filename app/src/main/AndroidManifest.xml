@@ -99,7 +99,7 @@
             android:exported="true">
         </activity>
         <activity
-            android:name=".WelcomeToWhisperActivity9"
+            android:name=".WelcomeToStabiliyaiActivity"
             android:label="Welcome Activity"
             android:exported="true">
         </activity>
