@@ -255,6 +255,31 @@
                 android:textStyle="bold"
                 android:fontFamily="sans-serif-black" />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/button9"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/runway"
+                android:background="@drawable/rounded_button_bg"
+                android:scaleType="fitCenter"
+                android:contentDescription="Image Button"
+                android:padding="10dp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="runway"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black" />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -267,6 +292,59 @@
         android:orientation="horizontal"
         android:layout_gravity="center"
         android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/button10"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/stable_diffusion"
+                android:background="@drawable/rounded_button_bg"
+                android:scaleType="fitCenter"
+                android:contentDescription="Image Button"
+                android:padding="2dp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="stable diffusion"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/button11"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/suno"
+                android:background="@drawable/rounded_button_bg"
+                android:scaleType="fitCenter"
+                android:contentDescription="Image Button"
+                android:padding="8dp"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="suno AI"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black" />
+        </LinearLayout>
+
+
+
 
 
     </LinearLayout>

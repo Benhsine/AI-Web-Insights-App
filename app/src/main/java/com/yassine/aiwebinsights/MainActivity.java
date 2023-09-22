@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     ImageButton button6;
     ImageButton button7;
     ImageButton button8;
+    ImageButton button9;
+    ImageButton button10;
+    ImageButton button11;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +76,21 @@ public class MainActivity extends AppCompatActivity {
         button8 = (android.widget.ImageButton) findViewById(R.id.button8);
         button8.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, WelcomeToStabiliyaiActivity.class);
+            startActivity(intent);
+        });
+        button9 = (android.widget.ImageButton) findViewById(R.id.button9);
+        button9.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, WelcomeToRunwayActivity9.class);
+            startActivity(intent);
+        });
+        button10 = (android.widget.ImageButton) findViewById(R.id.button10);
+        button10.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, WelcomeToStableDiffusionActivity10.class);
+            startActivity(intent);
+        });
+        button11 = (android.widget.ImageButton) findViewById(R.id.button11);
+        button11.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, WelcomeToSunoActivity11.class);
             startActivity(intent);
         });
 

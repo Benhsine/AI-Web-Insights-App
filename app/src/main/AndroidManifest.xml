@@ -103,6 +103,21 @@
             android:label="Welcome Activity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".WelcomeToRunwayActivity9"
+            android:label="Welcome Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WelcomeToStableDiffusionActivity10"
+            android:label="Welcome Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WelcomeToSunoActivity11"
+            android:label="Welcome Activity"
+            android:exported="true">
+        </activity>
 
         <activity
             android:name=".MainActivity"
