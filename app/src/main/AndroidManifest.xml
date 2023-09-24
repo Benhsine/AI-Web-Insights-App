@@ -55,6 +55,21 @@
             android:exported="true">
         </activity>
         <activity
+            android:name=".WebView9"
+            android:label="bing Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WebView10"
+            android:label="bing Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".WebView11"
+            android:label="bing Activity"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".WelcomeActivity1"
             android:label="AI Web Insights"
             android:exported="true">
@@ -124,10 +139,13 @@
             android:label="main Activity"
             android:exported="true">
         </activity>
-
+        <!-- google ads -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713"/>
+        <!-- applovin ads -->
+        <meta-data android:name="applovin.sdk.key"
+            android:value="NfrKgkChJVu5UquAMHJNCttLsLePkNrfCSDZmGhqbPr7huZxIinMv5pMZzT78XPRKPm7zC9kq770A9O62itBm3"/>
     </application>
 
 </manifest>

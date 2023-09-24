@@ -20,7 +20,7 @@ public class WebView9 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview9);
         webView9  = (WebView) findViewById(R.id.webview9);
-        webView9.loadUrl("https://ideogram.ai");
+        webView9.loadUrl("https://runwayml.com");
         webView9.setWebViewClient(new WebViewClient());
         WebSettings webSettings = webView9.getSettings();
         webSettings.setUseWideViewPort(true);

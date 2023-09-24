@@ -70,18 +70,15 @@ public class WelcomeActivity1 extends AppCompatActivity {
 
 
         Button startButton = findViewById(R.id.startButton1);
-        startButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mInterstitialAd != null) {
-                    // Show the interstitial ad if it's loaded
-                    mInterstitialAd.show(WelcomeActivity1.this);
-                } else {
-                    Log.d(TAG, "The interstitial ad wasn't ready yet.");
-                    // If the ad is not ready, proceed to launch the MainActivity
-                    Intent intent = new Intent(WelcomeActivity1.this, MainActivity.class);
-                    startActivity(intent);
-                }
+        startButton.setOnClickListener(view -> {
+            if (mInterstitialAd != null) {
+                // Show the interstitial ad if it's loaded
+                mInterstitialAd.show(WelcomeActivity1.this);
+            } else {
+                Log.d(TAG, "The interstitial ad wasn't ready yet.");
+                // If the ad is not ready, proceed to launch the MainActivity
+                Intent intent = new Intent(WelcomeActivity1.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 

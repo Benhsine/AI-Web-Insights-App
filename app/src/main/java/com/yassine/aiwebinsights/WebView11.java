@@ -19,8 +19,8 @@ public class WebView11 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview11);
-        webView11 = (WebView) findViewById(R.id.webview11);
-        webView11.loadUrl("https://www.suno.ai");
+        webView11 = findViewById(R.id.webview11);
+        webView11.loadUrl("https://www.suno.ai/");
         webView11.setWebViewClient(new WebViewClient());
         WebSettings webSettings = webView11.getSettings();
         webSettings.setUseWideViewPort(true);

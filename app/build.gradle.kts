@@ -28,6 +28,7 @@ android {
     }
 }
 
+
 dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
@@ -40,6 +41,8 @@ dependencies {
     // admob ads
 
     implementation("com.google.android.gms:play-services-ads:22.4.0")
+    //applovin ads
+    implementation ("com.applovin:applovin-sdk:11.11.3")
 
 
 }

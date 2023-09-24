@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:maxads="http://schemas.applovin.com/android/1.0"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
     android:padding="16dp">
+
 
     <com.yassine.aiwebinsights.RoundedImageView
         android:id="@+id/welcomeImage3"
@@ -52,5 +54,6 @@
         android:paddingRight="10dp"
         android:text="Get Started"
         android:textSize="16sp" />
+
 
 </RelativeLayout>
