@@ -1,88 +1,123 @@
 package com.yassine.aiwebinsights;
 
-import androidx.annotation.NonNull;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
+import com.applovin.mediation.MaxAd;
+import com.applovin.mediation.MaxAdListener;
+import com.applovin.mediation.MaxAdViewAdListener;
+import com.applovin.mediation.MaxError;
+import com.applovin.mediation.ads.MaxAdView;
+import com.applovin.mediation.ads.MaxInterstitialAd;
+import com.applovin.sdk.AppLovinSdk;
+import com.applovin.sdk.AppLovinSdkConfiguration;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import java.util.concurrent.TimeUnit;
 
-public class WelcomeActivity1 extends AppCompatActivity {
-
-    private AdView mAdView;
-    private InterstitialAd mInterstitialAd;
-    private static final String TAG = "WelcomeActivity1"; // Define TAG
-
+public class WelcomeActivity1 extends AppCompatActivity implements MaxAdListener, MaxAdViewAdListener {
+    private MaxInterstitialAd interstitialAd;
+    private int retryAttempt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome1);
-
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
+        //
+        AppLovinSdk.getInstance( this ).setMediationProvider( "max" );
+        AppLovinSdk.initializeSdk( this, configuration -> {
+            // AppLovin SDK is initialized, start loading ads
         });
-
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-        // AdMob interstitial ad
-        InterstitialAd.load(this, getString(R.string.interadmob), adRequest,
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        // The mInterstitialAd reference will be null until an ad is loaded.
-                        mInterstitialAd = interstitialAd;
-                        Log.i(TAG, "onAdLoaded");
-                        // You can add an ad listener to handle the close button click
-                        mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                            @Override
-                            public void onAdDismissedFullScreenContent() {
-                                // The user closed the ad, navigate to MainActivity
-                                Intent intent = new Intent(WelcomeActivity1.this, MainActivity.class);
-                                startActivity(intent);
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-                        Log.d(TAG, loadAdError.toString());
-                        mInterstitialAd = null;
-                    }
-                });
-
-
         Button startButton = findViewById(R.id.startButton1);
+        interstitialAd = new MaxInterstitialAd( getString(R.string.interapplovin), this );
+        interstitialAd.setListener( this );
+
+        // Load the first ad
+        interstitialAd.loadAd();
         startButton.setOnClickListener(view -> {
-            if (mInterstitialAd != null) {
-                // Show the interstitial ad if it's loaded
-                mInterstitialAd.show(WelcomeActivity1.this);
-            } else {
-                Log.d(TAG, "The interstitial ad wasn't ready yet.");
-                // If the ad is not ready, proceed to launch the MainActivity
-                Intent intent = new Intent(WelcomeActivity1.this, MainActivity.class);
-                startActivity(intent);
+            if ( interstitialAd.isReady() )
+            {
+                interstitialAd.showAd();
             }
+            // Launch the MainActivity
+            Intent intent = new Intent(WelcomeActivity1.this, MainActivity.class);
+            startActivity(intent);
         });
 
 
+// Load the banner ad
+        MaxAdView adView = findViewById(R.id.adView);
+        adView.loadAd();
+
+// Set the banner ad view's visibility to View.VISIBLE
+        adView.setVisibility(View.VISIBLE);
+
+    }
+    // MAX Ad Listener
+    @Override
+    public void onAdLoaded(final MaxAd maxAd)
+    {
+        // Interstitial ad is ready to be shown. interstitialAd.isReady() will now return 'true'
+
+        // Reset retry attempt
+        retryAttempt = 0;
+    }
+
+    @Override
+    public void onAdLoadFailed(final String adUnitId, final MaxError error)
+    {
+        // Interstitial ad failed to load
+        // AppLovin recommends that you retry with exponentially higher delays up to a maximum delay (in this case 64 seconds)
+
+        retryAttempt++;
+        long delayMillis = TimeUnit.SECONDS.toMillis( (long) Math.pow( 2, Math.min( 6, retryAttempt ) ) );
+
+        new Handler().postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                interstitialAd.loadAd();
+            }
+        }, delayMillis );
+    }
+
+    @Override
+    public void onAdDisplayFailed(final MaxAd maxAd, final MaxError error)
+    {
+        // Interstitial ad failed to display. AppLovin recommends that you load the next ad.
+        interstitialAd.loadAd();
+    }
+
+    @Override
+    public void onAdDisplayed(final MaxAd maxAd) {}
+
+    @Override
+    public void onAdClicked(final MaxAd maxAd) {}
+
+    @Override
+    public void onAdHidden(final MaxAd maxAd)
+    {
+        // Interstitial ad is hidden. Pre-load the next ad
+        interstitialAd.loadAd();
+    }
+
+    @Override
+    public void onAdExpanded(MaxAd maxAd) {
+
+    }
+
+    @Override
+    public void onAdCollapsed(MaxAd maxAd) {
 
     }
 }

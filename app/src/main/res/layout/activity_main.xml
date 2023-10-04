@@ -31,7 +31,6 @@
                 android:layout_height="100dp"
                 android:src="@drawable/chatgpt"
                 android:background="@drawable/rounded_button_bg"
-                android:contentDescription="Circular Image"
                 android:scaleType="fitCenter"
                 android:padding="12dp"
             />
@@ -350,20 +349,17 @@
     </LinearLayout>
 
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        ads:adSize="BANNER"
-        android:layout_marginTop="120dp"
-        ads:adUnitId="@string/banneradmob">
-    </com.google.android.gms.ads.AdView>
 
 
-
-
+    <com.applovin.mediation.ads.MaxAdView
+        xmlns:maxads="http://schemas.applovin.com/android/1.0"
+        android:id="@+id/adView2"
+        android:layout_marginTop="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/banner_height"
+        android:layout_alignParentBottom="true"
+        maxads:adUnitId="6da072c2c13ca767"
+        android:background="@color/white" />
 
 
 

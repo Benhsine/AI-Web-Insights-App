@@ -15,14 +15,14 @@ import com.applovin.mediation.ads.MaxInterstitialAd;
 
 import java.util.concurrent.TimeUnit;
 
-public class WelcomeToRunwayActivity9 extends AppCompatActivity implements MaxAdListener {
+public class WelcomeToStableDiffusionActivity11 extends AppCompatActivity implements MaxAdListener {
     private MaxInterstitialAd interstitialAd;
     private int retryAttempt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome_runway10);
-        Button startButton = findViewById(R.id.startrunway);
+        setContentView(R.layout.activity_welcome_stable_diffusion11);
+        Button startButton = findViewById(R.id.startstablediffusion);
         interstitialAd = new MaxInterstitialAd( getString(R.string.interapplovin), this );
         interstitialAd.setListener( this );
 
@@ -36,7 +36,7 @@ public class WelcomeToRunwayActivity9 extends AppCompatActivity implements MaxAd
                     interstitialAd.showAd();
                 }
                 // Launch the MainActivity
-                Intent intent = new Intent(WelcomeToRunwayActivity9.this, WebView9.class);
+                Intent intent = new Intent(WelcomeToStableDiffusionActivity11.this, WebView10.class);
                 startActivity(intent);
             }
         });

@@ -15,14 +15,14 @@ import com.applovin.mediation.ads.MaxInterstitialAd;
 
 import java.util.concurrent.TimeUnit;
 
-public class WelcomeToSunoActivity11 extends AppCompatActivity implements MaxAdListener {
+public class WelcomeToStabiliyaiActivity9 extends AppCompatActivity implements MaxAdListener {
     private MaxInterstitialAd interstitialAd;
     private int retryAttempt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome_suno12);
-        Button startButton = findViewById(R.id.startsuno);
+        setContentView(R.layout.activity_welcome_stability_ai9);
+        Button startButton = findViewById(R.id.startstabilityai);
         interstitialAd = new MaxInterstitialAd( getString(R.string.interapplovin), this );
         interstitialAd.setListener( this );
 
@@ -36,7 +36,7 @@ public class WelcomeToSunoActivity11 extends AppCompatActivity implements MaxAdL
                     interstitialAd.showAd();
                 }
                 // Launch the MainActivity
-                Intent intent = new Intent(WelcomeToSunoActivity11.this, WebView11.class);
+                Intent intent = new Intent(WelcomeToStabiliyaiActivity9.this, WebView8.class);
                 startActivity(intent);
             }
         });

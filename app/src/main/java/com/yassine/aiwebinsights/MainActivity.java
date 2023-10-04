@@ -4,13 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.AdLoader;
-import com.google.android.gms.ads.LoadAdError;
+import com.applovin.mediation.MaxAdListener;
+import com.applovin.mediation.MaxAdViewAdListener;
+import com.applovin.mediation.ads.MaxAdView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -32,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
 
 
@@ -75,26 +71,30 @@ public class MainActivity extends AppCompatActivity {
         });
         button8 = (android.widget.ImageButton) findViewById(R.id.button8);
         button8.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, WelcomeToStabiliyaiActivity.class);
+            Intent intent = new Intent(MainActivity.this, WelcomeToStabiliyaiActivity9.class);
             startActivity(intent);
         });
         button9 = (android.widget.ImageButton) findViewById(R.id.button9);
         button9.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, WelcomeToRunwayActivity9.class);
+            Intent intent = new Intent(MainActivity.this, WelcomeToRunwayActivity10.class);
             startActivity(intent);
         });
         button10 = (android.widget.ImageButton) findViewById(R.id.button10);
         button10.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, WelcomeToStableDiffusionActivity10.class);
+            Intent intent = new Intent(MainActivity.this, WelcomeToStableDiffusionActivity11.class);
             startActivity(intent);
         });
         button11 = (android.widget.ImageButton) findViewById(R.id.button11);
         button11.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, WelcomeToSunoActivity11.class);
+            Intent intent = new Intent(MainActivity.this, WelcomeToSunoActivity12.class);
             startActivity(intent);
         });
 
+        MaxAdView adView = findViewById(R.id.adView2);
+        adView.loadAd();
 
+// Set the banner ad view's visibility to View.VISIBLE
+        adView.setVisibility(View.VISIBLE);
     }
     @Override
     public void onBackPressed() {

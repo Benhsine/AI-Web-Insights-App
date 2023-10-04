@@ -15,6 +15,11 @@
         android:theme="@style/Theme.AIWebInsights"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity"
+            android:label="main Activity"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".WebView1"
             android:label="chatgpt Activity"
             android:exported="true">
@@ -31,42 +36,42 @@
         </activity>
         <activity
             android:name=".WebView4"
-            android:label="bing Activity"
+            android:label="bard Activity"
             android:exported="true">
         </activity>
         <activity
             android:name=".WebView5"
-            android:label="bing Activity"
+            android:label="microsoft designer Activity"
             android:exported="true">
         </activity>
         <activity
             android:name=".WebView6"
-            android:label="bing Activity"
+            android:label="claude ai Activity"
             android:exported="true">
         </activity>
         <activity
             android:name=".WebView7"
-            android:label="bing Activity"
+            android:label="ideogram Activity"
             android:exported="true">
         </activity>
         <activity
             android:name=".WebView8"
-            android:label="bing Activity"
+            android:label="stability ai Activity"
             android:exported="true">
         </activity>
         <activity
             android:name=".WebView9"
-            android:label="bing Activity"
+            android:label="runway Activity"
             android:exported="true">
         </activity>
         <activity
             android:name=".WebView10"
-            android:label="bing Activity"
+            android:label="stable diffusion Activity"
             android:exported="true">
         </activity>
         <activity
             android:name=".WebView11"
-            android:label="bing Activity"
+            android:label="suno ai Activity"
             android:exported="true">
         </activity>
         <activity
@@ -114,35 +119,27 @@
             android:exported="true">
         </activity>
         <activity
-            android:name=".WelcomeToStabiliyaiActivity"
+            android:name=".WelcomeToStabiliyaiActivity9"
             android:label="Welcome Activity"
             android:exported="true">
         </activity>
         <activity
-            android:name=".WelcomeToRunwayActivity9"
+            android:name=".WelcomeToRunwayActivity10"
             android:label="Welcome Activity"
             android:exported="true">
         </activity>
         <activity
-            android:name=".WelcomeToStableDiffusionActivity10"
+            android:name=".WelcomeToStableDiffusionActivity11"
             android:label="Welcome Activity"
             android:exported="true">
         </activity>
         <activity
-            android:name=".WelcomeToSunoActivity11"
+            android:name=".WelcomeToSunoActivity12"
             android:label="Welcome Activity"
             android:exported="true">
         </activity>
 
-        <activity
-            android:name=".MainActivity"
-            android:label="main Activity"
-            android:exported="true">
-        </activity>
-        <!-- google ads -->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+
         <!-- applovin ads -->
         <meta-data android:name="applovin.sdk.key"
             android:value="NfrKgkChJVu5UquAMHJNCttLsLePkNrfCSDZmGhqbPr7huZxIinMv5pMZzT78XPRKPm7zC9kq770A9O62itBm3"/>
