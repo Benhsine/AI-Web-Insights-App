@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.applovin.mediation.MaxAd;
 import com.applovin.mediation.MaxAdListener;
 import com.applovin.mediation.MaxError;
+import com.applovin.mediation.ads.MaxAdView;
 import com.applovin.mediation.ads.MaxInterstitialAd;
 
 import java.util.concurrent.TimeUnit;
@@ -45,6 +46,12 @@ public class WelcomeToMidjourneyActivity3 extends AppCompatActivity implements M
                 startActivity(intent);
             }
         });
+        // Load the banner ad
+        MaxAdView adView = findViewById(R.id.adView3);
+        adView.loadAd();
+
+// Set the banner ad view's visibility to View.VISIBLE
+        adView.setVisibility(View.VISIBLE);
     }
     // MAX Ad Listener
     @Override

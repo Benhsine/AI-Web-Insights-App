@@ -55,7 +55,7 @@ public class WelcomeActivity1 extends AppCompatActivity implements MaxAdListener
 
 
 // Load the banner ad
-        MaxAdView adView = findViewById(R.id.adView);
+        MaxAdView adView = findViewById(R.id.adView1);
         adView.loadAd();
 
 // Set the banner ad view's visibility to View.VISIBLE

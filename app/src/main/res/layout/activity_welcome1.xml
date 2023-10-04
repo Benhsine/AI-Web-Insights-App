@@ -53,11 +53,11 @@
         android:textSize="16sp" />
     <com.applovin.mediation.ads.MaxAdView
         xmlns:maxads="http://schemas.applovin.com/android/1.0"
-        android:id="@+id/adView"
+        android:id="@+id/adView1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/banner_height"
         android:layout_alignParentBottom="true"
-        maxads:adUnitId="6da072c2c13ca767"
+        maxads:adUnitId="@string/bannerapplovin"
         android:background="@color/white" />
 
 

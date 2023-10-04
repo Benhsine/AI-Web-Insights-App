@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        MaxAdView adView = findViewById(R.id.adView2);
+        MaxAdView adView = findViewById(R.id.adView);
         adView.loadAd();
 
 // Set the banner ad view's visibility to View.VISIBLE

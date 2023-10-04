@@ -52,5 +52,13 @@
         android:paddingRight="10dp"
         android:text="Get Started"
         android:textSize="16sp" />
+    <com.applovin.mediation.ads.MaxAdView
+        xmlns:maxads="http://schemas.applovin.com/android/1.0"
+        android:id="@+id/adView12"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/banner_height"
+        android:layout_alignParentTop="true"
+        maxads:adUnitId="@string/bannerapplovin"
+        android:background="@color/white" />
 
 </RelativeLayout>
